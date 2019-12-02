@@ -1,0 +1,14 @@
+{
+  "name": "advent-of-code",
+  "version": "1.0.0",
+  "description": "Solutions for Advent of Code 2019",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Tony Fay",
+  "license": "MIT",
+  "bin": {
+    "hello": "./bin/index.js"
+  }
+}

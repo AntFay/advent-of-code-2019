@@ -29,7 +29,6 @@ function quadraticSearch(intcode, expectedOutput) {
       output = interpret(intcode)[0];
     }
   }
-  console.log((noun-1) + " " + (verb-1));
   return 100*(noun-1)+(verb-1);
 }
 

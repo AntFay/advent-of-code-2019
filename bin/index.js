@@ -7,7 +7,7 @@ var day4 = require('./solutions/day4.js');
 var day5 = require('./solutions/day5.js');
 var day6 = require('./solutions/day6.js');
 var day7 = require('./solutions/day7.js');
-// var day8 = require('./solutions/day8.js');
+var day8 = require('./solutions/day8.js');
 // var day9 = require('./solutions/day9.js');
 // var day10 = require('./solutions/day10.js');
 // var day11 = require('./solutions/day11.js');
@@ -50,9 +50,9 @@ console.log(day6.solve());
 console.log("\nDAY 7");
 console.log(day7.solve());
 
-// console.log("\nDAY 8");
-// console.log(day8.solve());
-//
+console.log("\nDAY 8");
+console.log(day8.solve());
+
 // console.log("\nDAY 9");
 // console.log(day9.solve());
 //

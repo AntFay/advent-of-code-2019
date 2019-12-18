@@ -16,13 +16,6 @@ module.exports = {
   }
 }
 
-// Class Orbit {
-//   constructor(name) {
-//     this.name = name;
-//     this.orbiters = [];
-//   }
-// }
-
 function findSantaFrom(start, orbits) {
   var currentBodies = [start];
   var orbits = orbits;
@@ -60,7 +53,6 @@ function rAddOrbits(body, depth) {
     var bodies = orbit.split(")");
     return bodies[1];
   });
-  // console.log("BODY: " + body + " MATCHES: " + matches);
   depth++;
   matches.forEach( (orbit) => {
     depthMap.push({

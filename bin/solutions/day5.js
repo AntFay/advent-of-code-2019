@@ -9,8 +9,8 @@ module.exports = {
     var input = 1;
     var input2 = 5;
 
-    var diagnosticCode = compute(program, input);
-    var diagnosticCode2 = compute(program2, input2);
+    var diagnosticCode = compute(program, [input]);
+    var diagnosticCode2 = compute(program2, [input2]);
 
     var solutionPartOne = "Diagnostic Code for Input=1: " + diagnosticCode;
     var solutionPartTwo = "Diagnostic Code for Input=5: " + diagnosticCode2;

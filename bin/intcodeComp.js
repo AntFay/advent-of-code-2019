@@ -1,6 +1,3 @@
-// const POSITION_MODE = 0;
-// const IMMEDIATE_MODE = 1;
-
 var intcode;
 
 var instructionParams = new Map([
@@ -15,7 +12,7 @@ var instructionParams = new Map([
   [ 99, 0 ]
 ]);
 
-module.exports = function (icode, input) {
+module.exports = function (icode, inputs) {
   var pointer = 0;
   var output;
   var codeComplete = false;
@@ -43,11 +40,12 @@ module.exports = function (icode, input) {
         intcode[setPointer] = value1 * value2;
         break;
       case 3:
-        if (input) {
-          intcode[intcode[pointer+1]] = input;
+        if (inputs) {
+          intcode[intcode[pointer+1]] = inputs[0];
+          inputs.shift();
         }
         else {
-          console.log("No input provided.");
+          console.log("No inputs available.");
         }
         break;
       case 4:

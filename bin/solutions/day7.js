@@ -144,11 +144,11 @@ function findMaximumSignal(permutations, program) {
   var maximumSignal = 0;
   var input = 0;
   permutations.forEach((permutation) => {
-    var outputA = compute(program.slice(), [permutation[0], input]);
-    var outputB = compute(program.slice(), [permutation[1], outputA]);
-    var outputC = compute(program.slice(), [permutation[2], outputB]);
-    var outputD = compute(program.slice(), [permutation[3], outputC]);
-    var outputE = compute(program.slice(), [permutation[4], outputD]);
+    var outputA = compute(program.slice(), [permutation[0], input])[0];
+    var outputB = compute(program.slice(), [permutation[1], outputA])[0];
+    var outputC = compute(program.slice(), [permutation[2], outputB])[0];
+    var outputD = compute(program.slice(), [permutation[3], outputC])[0];
+    var outputE = compute(program.slice(), [permutation[4], outputD])[0];
     // console.log(permutation);
     // console.log(outputA + " " + outputB + " " + outputC + " " + outputD + " " + outputE)
     if ( outputE > maximumSignal ) maximumSignal = outputE;

@@ -1,11 +1,13 @@
 var fs = require("fs");
 
-var compute = require('.././intcodeComp.js');
+var IntcodeComp = require('../intcodeComp.js');
 
 module.exports = {
   solve: function() {
-    var boostKey = compute(initProgram(), [1]);
-    var coordinates = compute(initProgram(), [2]);
+    var computer = new IntcodeComp(initProgram());
+    var boostKey = computer.run([1]);
+    var computer2 = new IntcodeComp(initProgram());
+    var coordinates = computer2.run([2]);
 
     var solutionPartOne = "BOOST keycode for successful program: " + boostKey;
     var solutionPartTwo = "Distress Signal Coordinates: " + coordinates;

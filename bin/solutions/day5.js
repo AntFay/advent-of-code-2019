@@ -1,16 +1,11 @@
 var fs = require("fs");
 
-var compute = require('.././intcodeComp.js');
+var IntcodeComp = require('../intcodeComp.js');
 
 module.exports = {
   solve: function() {
-    var program = initProgram();
-    var program2 = initProgram();
-    var input = 1;
-    var input2 = 5;
-
-    var diagnosticCode = compute(program, [input]).slice(-1)[0];
-    var diagnosticCode2 = compute(program2, [input2]).slice(-1)[0];
+    var diagnosticCode = new IntcodeComp(initProgram()).run([1]).slice(-1)[0];
+    var diagnosticCode2 = new IntcodeComp(initProgram()).run([5]).slice(-1)[0];
 
     var solutionPartOne = "Diagnostic Code for Input=1: " + diagnosticCode;
     var solutionPartTwo = "Diagnostic Code for Input=5: " + diagnosticCode2;

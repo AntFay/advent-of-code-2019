@@ -1,6 +1,6 @@
 var fs = require("fs");
 
-var compute = require('.././intcodeComp.js');
+var IntcodeComp = require('../intcodeComp.js');
 var instructionParams = new Map([
   [ 1, 3 ],
   [ 2, 3 ],
@@ -144,13 +144,11 @@ function findMaximumSignal(permutations, program) {
   var maximumSignal = 0;
   var input = 0;
   permutations.forEach((permutation) => {
-    var outputA = compute(program.slice(), [permutation[0], input])[0];
-    var outputB = compute(program.slice(), [permutation[1], outputA])[0];
-    var outputC = compute(program.slice(), [permutation[2], outputB])[0];
-    var outputD = compute(program.slice(), [permutation[3], outputC])[0];
-    var outputE = compute(program.slice(), [permutation[4], outputD])[0];
-    // console.log(permutation);
-    // console.log(outputA + " " + outputB + " " + outputC + " " + outputD + " " + outputE)
+    var outputA = new IntcodeComp(program.slice()).run([permutation[0], input])[0];
+    var outputB = new IntcodeComp(program.slice()).run([permutation[1], outputA])[0];
+    var outputC = new IntcodeComp(program.slice()).run([permutation[2], outputB])[0];
+    var outputD = new IntcodeComp(program.slice()).run([permutation[3], outputC])[0];
+    var outputE = new IntcodeComp(program.slice()).run([permutation[4], outputD])[0];
     if ( outputE > maximumSignal ) maximumSignal = outputE;
   });
   return maximumSignal;
